@@ -1,9 +1,10 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TechStack from "./components/TechStack";
+import Achievements from "./components/Achievements";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 px-4 text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center pt-20 bg-slate-950 px-4 text-center">
  
       <div className="space-y-6 max-w-3xl">
  
@@ -47,6 +48,8 @@ export default function Home() {
       </div>
 
       <TechStack />
+
+      <Achievements />
     </main>
   );
 }
