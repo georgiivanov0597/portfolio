@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import TechStack from "./components/TechStack";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 px-4 text-center">
@@ -6,18 +8,18 @@ export default function Home() {
       <div className="space-y-6 max-w-3xl">
  
         <h2 className="text-xl font-medium text-cyan-400 uppercase tracking-wider">
-          Здравей, страннико
+          Hello there
         </h2>
  
         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-          Аз съм <span className="text-cyan-400">Георги Иванов</span>.
+          I'm <span className="text-cyan-400">Georgi Ivanov</span>.
           <br />
           Low-Code developer.
         </h1>
  
         <p className="text-lg md:text-xl text-slate-400 mx-auto max-w-2xl">
-          Създавам модерни, бързи и достъпни Low-Code приложения. 
-          Фокусиран съм върху Mendix. В момента експериментирам с React, Next.js.
+          Building modern, fast, and accessible low-code applications. 
+          Mainly focused on Mendix and experimenting with React, Next.js.
         </p>
  
           <div className="flex gap-6 justify-center mt-8">
@@ -43,6 +45,8 @@ export default function Home() {
           </a>
         </div>
       </div>
+
+      <TechStack />
     </main>
   );
 }
