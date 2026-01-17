@@ -1,3 +1,4 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 px-4 text-center">
@@ -19,27 +20,29 @@ export default function Home() {
           Фокусиран съм върху Mendix. В момента експериментирам с React, Next.js.
         </p>
  
-          {/* GitHub Бутон */}
+          <div className="flex gap-6 justify-center mt-8">
+          { /*Github button */ }
           <a 
             href="https://github.com/georgiivanov0597" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-8 py-3 rounded-full bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition hover:scale-105"
+            className="p-4 rounded-full bg-slate-800 text-white hover:bg-cyan-500 hover:text-slate-950 transition hover:scale-110 flex items-center"
+            aria-label="Github Profile"
           >
-            GitHub Профил
+            <FaGithub className="w-7 h-7" />
           </a>
- 
-          {/* LinkedIn Бутон */}
+          { /*LinkedIn button */ }
           <a 
             href="https://www.linkedin.com/in/georgi-ivanov-bbab5517a/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-8 py-3 rounded-full border border-slate-700 text-white hover:bg-slate-800 transition hover:scale-105"
+            className="p-4 rounded-full bg-slate-800 text-white hover:bg-cyan-500 hover:text-slate-950 transition hover:scale-110 flex items-center justify-center"
+            aria-label="LinkedIn Profile"
           >
-            LinkedIn
+            <FaLinkedin className="w-7 h-7" />
           </a>
- 
         </div>
+      </div>
     </main>
   );
 }
