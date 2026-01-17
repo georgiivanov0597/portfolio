@@ -14,7 +14,7 @@ export default function TechStack() {
         { name: "Node.js", icon: <SiNodedotjs className="text-green-500"/> },
         { name: "Git", icon: <SiGit className="text-orange-500"/> },
         { name: "Javascript", icon: <SiJavascript className="text-yellow-400"/> },
-        { name: "SiAzuredevops", icon: <VscAzureDevops className="text-blue-500"/>}
+        { name: "Azuredevops", icon: <VscAzureDevops className="text-blue-500"/>}
     ];
 
     return(
