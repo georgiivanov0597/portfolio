@@ -6,7 +6,7 @@ export default function Achievements() {
     {
       id: 1,
       title: "Business Impact",
-      value: "High ROI", // Вместо цифри
+      value: "High ROI", // ROI as description instead of numbers
       description: "Delivering significant return on investment through process digitalization and workflow optimization.",
       icon: <FaChartLine className="text-green-400" />,
     },

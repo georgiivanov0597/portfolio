@@ -7,7 +7,7 @@ import { FaProjectDiagram } from "react-icons/fa";
 export default function TechStack() {
     // Here are all the technologies that I can work with or learning for now
     const skills = [
-        { name: "Mendix", icon: <FaProjectDiagram className="text-[#2541F8]"/> },
+        { name: "Mendix", icon: <img src="/mendix.png" alt="Mendix Logo" className="w-[1em] h-[1em] object-contain block"/> },
         { name: "React", icon: <SiReact className="text-cyan-400"/> },
         { name: "Next.js", icon: <SiNextdotjs className="text-white"/> },
         { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-300"/> },
