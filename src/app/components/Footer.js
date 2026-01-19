@@ -25,7 +25,7 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} Georgi Ivanov. All rights reserved.
       </p>
       <p>
-        Built width <span className="text-cyan-400">Next.js</span> & <span className="text-cyan-400">Tailwind CSS</span>.
+        Built with <span className="text-cyan-400">Next.js</span> & <span className="text-cyan-400">Tailwind CSS</span>.
       </p>
       
     </footer>
