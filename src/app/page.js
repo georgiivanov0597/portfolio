@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TechStack from "./components/TechStack";
 import Achievements from "./components/Achievements";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -50,6 +51,8 @@ export default function Home() {
       <TechStack />
 
       <Achievements />
+
+      <Footer />
     </main>
   );
 }
