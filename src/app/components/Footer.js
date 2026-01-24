@@ -11,7 +11,7 @@ export default function Footer() {
         </p>
 
         <a
-          href="mailto:georgi.ivanov0597@gmail.com"
+          href="mailto:contact@ivanovg.com"
           className="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-900 text-white hover:bg-cyan-500 hover:text-slate-950 transition duration-300 group"
         >
           <span className="font-medium">Get in Touch</span>
