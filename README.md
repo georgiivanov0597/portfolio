@@ -1,4 +1,4 @@
-# potfolio
+# portfolio
 
 Personal portfolio for [ivanovg.com](https://www.ivanovg.com).
 
