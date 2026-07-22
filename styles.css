@@ -53,6 +53,27 @@ body {
   letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.nav-full {
+  /* shown on desktop */
+}
+
+.nav-initials {
+  display: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  background: var(--accent);
+  color: white;
+  padding: 0.18rem 0.42rem;
+  border-radius: 5px;
+  line-height: 1;
+  box-shadow: 0 1px 2px rgba(20, 111, 244, 0.25);
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
 .nav-links {
@@ -379,6 +400,19 @@ body {
   font-weight: 500;
 }
 
+.nav-name:hover .nav-full {
+  color: var(--accent);
+}
+
+.nav-name:hover .nav-initials {
+  background: var(--accent-hover);
+}
+
+.nav-name:active .nav-initials {
+  transform: scale(0.96);
+}
+
+
 /* Modal for certificate */
 .modal {
   display: none;
@@ -457,9 +491,23 @@ body {
     font-size: 1rem;
   }
 
+  .nav-full {
+    display: none;
+  }
+
+  .nav-initials {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
   .nav-links {
     gap: 1rem;
     font-size: 0.875rem;
+  }
+
+  .section-title {
+    padding-left: 1.25rem;
   }
 
   .hero {
@@ -532,9 +580,23 @@ body {
     padding: 0.7rem 0.75rem;
   }
 
+  .nav-full {
+    display: none;
+  }
+
+  .nav-initials {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
   .nav-links {
     gap: 0.65rem;
     font-size: 0.78rem;
+  }
+
+  .section-title {
+    padding-left: 1rem;
   }
 
   .hero {
@@ -592,6 +654,12 @@ body {
 
   .contact {
     font-size: 0.95rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
   }
 }
 
