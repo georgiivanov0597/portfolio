@@ -256,6 +256,10 @@ body {
   letter-spacing: -0.02em;
 }
 
+.section h2.experience-previous {
+  margin-top: 3rem;
+}
+
 .about-text {
   font-size: 1.15rem;
   max-width: 720px;
