@@ -308,15 +308,6 @@ window.addEventListener('scroll', () => {
     toggle.classList.toggle('open', isOpen);
   });
 
-  // Close when a nav link is clicked
-  links.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.classList.remove('open');
-    });
-  });
-
   // Close when clicking outside the nav
   document.addEventListener('click', (e) => {
     if (!toggle.contains(e.target) && !links.contains(e.target)) {
@@ -340,7 +331,7 @@ window.addEventListener('scroll', () => {
       : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
-  function smoothScrollTo(target, duration = 950) {
+  function smoothScrollTo(target, duration = 1150) {
     if (!target) return;
 
     const headerOffset = 92; // fixed nav height + breathing room
