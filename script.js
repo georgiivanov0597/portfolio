@@ -326,3 +326,74 @@ window.addEventListener('scroll', () => {
     }
   });
 })();
+
+// =============================================
+// Smoother anchor scrolling (custom duration)
+// =============================================
+(function initSmoothScroll() {
+  const navLinkSelector = '.nav-links a[href^="#"], a[href^="#top"]';
+  const navLinks = document.querySelectorAll(navLinkSelector);
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function smoothScrollTo(target, duration = 950) {
+    if (!target) return;
+
+    const headerOffset = 92; // fixed nav height + breathing room
+    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerOffset;
+
+    const startPosition = window.pageYOffset;
+    const distance = offsetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startPosition + distance * easedProgress);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      } else {
+        // snap to final position
+        window.scrollTo(0, offsetPosition);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+
+        // Close mobile menu if open (hamburger already does this, but ensure)
+        const mobileLinks = document.querySelector('.nav-links');
+        const toggle = document.querySelector('.nav-toggle');
+        if (mobileLinks && mobileLinks.classList.contains('open')) {
+          mobileLinks.classList.remove('open');
+          if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.classList.remove('open');
+          }
+        }
+
+        smoothScrollTo(targetElement);
+      }
+    });
+  });
+})();
