@@ -649,7 +649,8 @@ body {
 
   .nav-links.open {
     display: flex;
-  }
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.15);
+}
 
   .nav-links a {
     padding: 0.4rem 0;
