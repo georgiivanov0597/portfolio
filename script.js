@@ -388,3 +388,45 @@ window.addEventListener('scroll', () => {
     });
   });
 })();
+
+// German certificate modal (click on German language pill)
+(function initGermanCertModal() {
+  const germanPill = document.querySelector('.german-cert');
+  const modal = document.getElementById('german-cert-modal');
+  if (!germanPill || !modal) return;
+
+  const closeBtn = modal.querySelector('.modal-close');
+
+  function openModal() {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  germanPill.addEventListener('click', openModal);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopImmediatePropagation();
+      closeModal();
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();

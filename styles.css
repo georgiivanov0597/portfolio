@@ -381,6 +381,22 @@ body {
   font-size: 0.85rem;
 }
 
+.lang.german-cert {
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.lang.german-cert:hover {
+  border-color: var(--accent);
+}
+
+.lang .view-cert {
+  font-size: 0.7rem;
+  margin-left: 0.35rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
 .contact {
   font-size: 1.1rem;
   max-width: 620px;
