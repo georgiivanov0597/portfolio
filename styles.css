@@ -335,6 +335,87 @@ body {
   margin-bottom: 1rem;
 }
 
+.role-timeline {
+  margin: 0 0 1.15rem;
+  padding: 0.85rem 1rem;
+  background: rgba(20, 111, 244, 0.06);
+  border: 1px solid rgba(20, 111, 244, 0.16);
+  border-radius: 10px;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 0.55rem;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(20, 111, 244, 0.18);
+}
+
+.timeline-dot.end {
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px rgba(20, 111, 244, 0.12);
+  animation: timeline-pulse 2.2s ease-in-out infinite;
+}
+
+.timeline-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(20, 111, 244, 0.35));
+  border-radius: 1px;
+}
+
+.timeline-labels {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.timeline-start {
+  justify-self: start;
+  font-weight: 500;
+}
+
+.timeline-end {
+  justify-self: end;
+  font-weight: 500;
+}
+
+.timeline-duration {
+  justify-self: center;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+@keyframes timeline-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(20, 111, 244, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(20, 111, 244, 0.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-dot.end {
+    animation: none;
+  }
+}
+
 .card-body {
   color: #334155;
   font-size: 0.975rem;

@@ -430,3 +430,36 @@ window.addEventListener('scroll', () => {
     }
   });
 })();
+
+// Current role tenure: Mar 2024 → now (years + months)
+(function initRoleTenure() {
+  const el = document.getElementById('current-role-duration');
+  if (!el) return;
+
+  const startAttr = el.getAttribute('data-start') || '2024-03';
+  const [sy, sm] = startAttr.split('-').map(Number);
+  if (!sy || !sm) return;
+
+  const now = new Date();
+  let months =
+    (now.getFullYear() - sy) * 12 + (now.getMonth() + 1 - sm);
+  if (months < 0) months = 0;
+
+  const years = Math.floor(months / 12);
+  const rem = months % 12;
+
+  let text = 'Present';
+  if (years > 0 && rem > 0) {
+    text = `${years} yr${years === 1 ? '' : 's'} ${rem} mo`;
+  } else if (years > 0) {
+    text = `${years} year${years === 1 ? '' : 's'}`;
+  } else if (rem > 0) {
+    text = `${rem} month${rem === 1 ? '' : 's'}`;
+  }
+
+  el.textContent = text;
+  el.setAttribute(
+    'title',
+    `In role since March 2024 (${months} month${months === 1 ? '' : 's'})`
+  );
+})();
